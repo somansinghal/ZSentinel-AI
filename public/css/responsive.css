@@ -1,0 +1,183 @@
+/* ===================================================================
+   Z-SENTINEL AI — RESPONSIVE STYLES (responsive.css)
+   Mobile, Tablet, and Desktop viewport adaptations
+=================================================================== */
+
+/* Large Tablets & Small Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+
+  .charts-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .charts-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .landing-nav {
+    padding: 0 2rem;
+  }
+
+  .flow-steps {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .flow-connector {
+    width: 2px;
+    height: 30px;
+    flex: none;
+    margin: 0.5rem 0;
+  }
+
+  .flow-connector::after {
+    top: auto;
+    bottom: -6px;
+    right: -4px;
+    border-top: 8px solid var(--color-accent);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: none;
+  }
+
+  .flow-step-box {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .landing-nav {
+    padding: 0 1.25rem;
+  }
+
+  .landing-links {
+    display: none;
+  }
+
+  .hero-section {
+    padding-top: 100px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .telemetry-ribbon {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Dashboard mobile layout */
+  .glass-topbar {
+    padding: 0 1rem;
+  }
+
+  .topbar-center-status {
+    display: none; /* Hide center telemetry pill on mobile to preserve space */
+  }
+
+  .user-meta-text {
+    display: none; /* Only avatar shown on compact view */
+  }
+
+  .glass-sidebar {
+    transform: translateX(-100%);
+    width: 260px !important;
+    box-shadow: 10px 0 35px rgba(0, 0, 0, 0.8);
+  }
+
+  /* When mobile sidebar is open */
+  body.mobile-sidebar-open .glass-sidebar {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    padding: 1.25rem 1rem;
+  }
+
+  /* Overlay for mobile sidebar backdrop */
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: var(--topbar-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    z-index: 850;
+  }
+
+  body.mobile-sidebar-open .sidebar-backdrop {
+    display: block;
+  }
+
+  .glass-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+    padding: 1.25rem;
+  }
+
+  .footer-left, .footer-right {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+/* Small Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .auth-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .auth-title {
+    font-size: 1.4rem;
+  }
+
+  .soc-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login &amp; Judge Demo — Z-SENTINEL AI</title>
+  <meta name="description" content="Secure Enterprise Authentication Portal and Isolated Judge Demo for Z-Sentinel AI (IBM Z Datathon 2026).">
+  <link rel="canonical" href="https://z-sentinel.vercel.app/login.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Login &amp; Judge Demo — Z-SENTINEL AI">
+  <meta property="og:description" content="Access the Z-Sentinel AI Operations Console via Google Auth or enter the isolated Judge Demo mode.">
+  <meta property="og:image" content="assets/z-sentinel-logo.png">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon (User Uploaded Logo Exclusively) -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/glass.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Lucide Icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Firebase Web SDK (Compat v10) -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+</head>
+<body class="bg-cyber-grid">
+
+  <div class="auth-viewport">
+    <div class="auth-ambient-glow"></div>
+
+    <div class="auth-card" style="max-width: 480px;">
+      <div class="auth-header">
+        <a href="index.html" title="Back to Home">
+          <img src="assets/z-sentinel-logo.png" alt="Z-Sentinel AI Shield Logo" class="auth-logo-img">
+        </a>
+        <h1 class="auth-title">Z-SENTINEL AI</h1>
+        <div class="auth-subtitle">AI Security &amp; Privacy Guardian</div>
+        <p class="auth-desc">Enterprise Operations Console for IBM Z</p>
+      </div>
+
+      <!-- SECTION 1: AUTHENTICATED ACCESS -->
+      <div class="auth-access-section" style="background: rgba(2, 6, 23, 0.4); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.25rem; text-align: left;">
+        <div style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; color: var(--color-accent); text-transform: uppercase; margin-bottom: 0.35rem;">
+          AUTHENTICATED ACCESS
+        </div>
+        <div style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Sign in with your verified identity via Firebase Google Authentication.
+        </div>
+        
+        <button type="button" class="btn-google" id="btn-google-login">
+          <svg class="google-icon" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span id="btn-text">Continue with Google</span>
+        </button>
+      </div>
+
+      <!-- SECTION 2: JUDGE DEMO MODE -->
+      <div class="judge-demo-section" style="background: rgba(245, 158, 11, 0.06); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: var(--radius-md); padding: 1.25rem; text-align: left;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+          <div style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; color: #fbbf24; text-transform: uppercase;">
+            JUDGE DEMO
+          </div>
+          <span class="badge badge-sim" style="font-size: 0.65rem;">ZERO CREDENTIALS NEEDED</span>
+        </div>
+        <div style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.4;">
+          Explore a safe, pre-populated demonstration environment with synthetic IBM Z telemetry, guided tour, and instant attack scenarios.
+        </div>
+        
+        <button type="button" class="btn btn-primary" id="btn-judge-demo" style="width: 100%; background: linear-gradient(135deg, #d97706 0%, #b45309 100%); border-color: rgba(251, 191, 36, 0.5); color: #ffffff;">
+          <i data-lucide="shield-check" style="width: 16px; height: 16px;"></i>
+          <span id="judge-btn-text">Enter Judge Demo</span>
+        </button>
+      </div>
+
+      <!-- Status / Error Notification Box -->
+      <div id="auth-alert" class="auth-alert" style="margin-top: 1rem;">
+        <i data-lucide="alert-circle" style="width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px;"></i>
+        <span id="alert-message">Authentication notice</span>
+      </div>
+
+      <!-- Quick Firebase Config Modal Trigger (For developers) -->
+      <div style="margin-top: 1rem; text-align: center;">
+        <button type="button" class="btn-outline btn-sm" id="btn-open-config" style="font-size: 0.72rem; border-style: dashed; padding: 0.25rem 0.75rem;">
+          <i data-lucide="settings" style="width: 12px; height: 12px;"></i>
+          <span>Configure Custom Firebase Credentials</span>
+        </button>
+      </div>
+
+      <!-- Footer & Legal Navigation -->
+      <div class="auth-footer" style="flex-direction: column; gap: 0.75rem; text-align: center;">
+        <div style="display: flex; justify-content: space-between; width: 100%; align-items: center;">
+          <a href="index.html" class="auth-back-link">
+            <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
+            <span>Back to Landing</span>
+          </a>
+          <span style="font-size: 0.72rem; color: var(--text-muted);">IBM Z Datathon 2026</span>
+        </div>
+
+        <!-- Legal Links Bar -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 0.75rem; font-size: 0.7rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.75rem; width: 100%;">
+          <a href="legal/privacy-policy.html">Privacy</a>
+          <span>•</span>
+          <a href="legal/terms-of-service.html">Terms</a>
+          <span>•</span>
+          <a href="legal/cookie-policy.html">Cookies</a>
+          <span>•</span>
+          <a href="legal/acceptable-use.html">Acceptable Use</a>
+          <span>•</span>
+          <a href="legal/security.html">Security</a>
+          <span>•</span>
+          <a href="legal/ai-disclaimer.html">AI Disclaimer</a>
+          <span>•</span>
+          <a href="legal/accessibility.html">Accessibility</a>
+          <span>•</span>
+          <a href="legal/contact.html">Contact</a>
+        </div>
+
+        <!-- Subtle Hackathon Disclaimer -->
+        <div style="font-size: 0.65rem; color: var(--text-muted); line-height: 1.3;">
+          Z-Sentinel AI is a hackathon demonstration. Do not use demo outputs as a substitute for professional security decisions.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Firebase Config Dialog Modal -->
+  <dialog id="config-dialog" style="background: var(--bg-navy-dark); border: 1px solid var(--border-cyan); border-radius: var(--radius-lg); padding: 1.75rem; color: var(--text-primary); max-width: 500px; margin: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.8);">
+    <h3 style="margin-bottom: 0.5rem; color: var(--text-white);">Firebase Project Configuration</h3>
+    <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1rem;">
+      Paste your Web App config JSON from Firebase Console. This will be stored locally in your browser for testing.
+    </p>
+    <textarea id="config-json-input" rows="8" style="width: 100%; background: #030712; color: #38bdf8; border: 1px solid var(--border-subtle); border-radius: 6px; padding: 10px; font-family: monospace; font-size: 0.78rem;" placeholder='{ "apiKey": "...", "authDomain": "...", "projectId": "..." }'></textarea>
+    <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 1rem;">
+      <button type="button" class="btn btn-secondary btn-sm" id="btn-close-dialog">Cancel</button>
+      <button type="button" class="btn btn-primary btn-sm" id="btn-save-config">Save &amp; Reload</button>
+    </div>
+  </dialog>
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/auth.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) window.lucide.createIcons();
+
+      // Check if user is already authenticated
+      const existingUser = window.ZSentinelAuth.getUser();
+      if (existingUser) {
+        redirectToTarget();
+        return;
+      }
+
+      // Check URL parameters for errors
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('error')) {
+        showAlert(urlParams.get('error'), 'error');
+      }
+
+      const googleBtn = document.getElementById('btn-google-login');
+      const judgeBtn = document.getElementById('btn-judge-demo');
+      const btnText = document.getElementById('btn-text');
+
+      // 1. Google Sign-In Handler
+      googleBtn.addEventListener('click', async () => {
+        setLoading(true);
+        hideAlert();
+
+        try {
+          const user = await window.ZSentinelAuth.signInWithGoogle();
+          showAlert(`Welcome, ${user.displayName || 'Analyst'}! Redirecting to Security Console...`, 'info');
+          setTimeout(() => redirectToTarget(), 800);
+        } catch (error) {
+          setLoading(false);
+          console.error("Sign in failed:", error);
+
+          if (error.message === 'CONFIG_REQUIRED') {
+            showAlert("Firebase currently uses placeholder credentials. You may enter custom Firebase Web credentials via 'Configure Custom Firebase Credentials' below, or click 'Enter Judge Demo' for immediate evaluation without setup.", 'info');
+          } else if (error.code === 'auth/popup-closed-by-user') {
+            showAlert("Sign-in window was closed before completing. Please try again.", 'error');
+          } else if (error.code === 'auth/unauthorized-domain') {
+            showAlert("Current domain is not authorized in your Firebase Authentication settings. Add this host in Firebase Console > Authentication > Settings > Authorized domains.", 'error');
+          } else {
+            showAlert(error.message || "Authentication failed. Please try again.", 'error');
+          }
+        }
+      });
+
+      // 2. Judge Demo Handler (Zero credentials, isolated sandbox)
+      judgeBtn.addEventListener('click', () => {
+        setLoading(true);
+        try {
+          const judgeUser = window.ZSentinelAuth.enterJudgeDemo();
+          showAlert(`Judge Demo Session Active (${judgeUser.displayName}). Loading Security Console...`, 'info');
+          setTimeout(() => redirectToTarget(), 600);
+        } catch (e) {
+          setLoading(false);
+          showAlert("Could not initialize Judge Demo session: " + e.message, 'error');
+        }
+      });
+
+      // Dialog controls
+      const configDialog = document.getElementById('config-dialog');
+      const btnOpenConfig = document.getElementById('btn-open-config');
+      const btnCloseDialog = document.getElementById('btn-close-dialog');
+      const btnSaveConfig = document.getElementById('btn-save-config');
+      const configInput = document.getElementById('config-json-input');
+
+      btnOpenConfig.addEventListener('click', () => {
+        configInput.value = JSON.stringify(window.ZSentinelConfig.getConfig(), null, 2);
+        configDialog.showModal();
+      });
+
+      btnCloseDialog.addEventListener('click', () => configDialog.close());
+
+      btnSaveConfig.addEventListener('click', () => {
+        try {
+          const parsed = JSON.parse(configInput.value);
+          window.ZSentinelConfig.saveConfig(parsed);
+        } catch (err) {
+          alert("Invalid JSON format. Please paste valid Firebase config JSON.");
+        }
+      });
+
+      function setLoading(isLoading) {
+        googleBtn.disabled = isLoading;
+        judgeBtn.disabled = isLoading;
+        if (isLoading) {
+          btnText.textContent = "Authenticating...";
+          googleBtn.style.opacity = '0.7';
+          judgeBtn.style.opacity = '0.7';
+        } else {
+          btnText.textContent = "Continue with Google";
+          googleBtn.style.opacity = '1';
+          judgeBtn.style.opacity = '1';
+        }
+      }
+
+      function showAlert(msg, type = 'error') {
+        const alertBox = document.getElementById('auth-alert');
+        const alertMsg = document.getElementById('alert-message');
+        alertBox.className = `auth-alert ${type} show`;
+        alertMsg.textContent = msg;
+        if (window.lucide) window.lucide.createIcons();
+      }
+
+      function hideAlert() {
+        const alertBox = document.getElementById('auth-alert');
+        alertBox.className = 'auth-alert';
+      }
+
+      function redirectToTarget() {
+        const redirectParam = urlParams.get('redirect');
+        if (redirectParam && !redirectParam.includes('login.html')) {
+          window.location.href = decodeURIComponent(redirectParam);
+        } else {
+          window.location.href = 'dashboard.html';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

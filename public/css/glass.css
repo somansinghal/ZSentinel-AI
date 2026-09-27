@@ -1,0 +1,385 @@
+/* ===================================================================
+   Z-SENTINEL AI — LIQUID GLASS DESIGN SYSTEM
+   CRITICAL CONSTRAINT: Applied ONLY to TOPBAR, SIDEBAR, and FOOTER.
+   Deep translucent dark surfaces, subtle refraction borders, blur.
+=================================================================== */
+
+/* -------------------------------------------------------------------
+   1. LIQUID GLASS TOPBAR
+------------------------------------------------------------------- */
+.glass-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--topbar-height);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border-bottom: var(--glass-border);
+  box-shadow: var(--glass-shadow), var(--glass-inner-glow);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.75rem;
+  transition: all var(--transition-normal);
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.topbar-logo-img {
+  height: 42px;
+  width: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.45));
+  transition: transform var(--transition-fast);
+}
+
+.topbar-logo-img:hover {
+  transform: scale(1.05);
+}
+
+.topbar-brand-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.brand-tagline {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.topbar-center-status {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.security-health-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #34d399;
+}
+
+.ibmz-stream-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(129, 140, 248, 0.08);
+  border: 1px solid rgba(129, 140, 248, 0.25);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  color: #a5b4fc;
+  font-family: var(--font-mono);
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topbar-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.topbar-btn:hover {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: var(--text-white);
+}
+
+.badge-counter {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--status-critical);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+}
+
+/* User Profile Badge */
+.user-profile-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.35rem 0.6rem 0.35rem 0.35rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.user-profile-menu:hover {
+  background: rgba(37, 99, 235, 0.12);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.user-avatar-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-accent);
+}
+
+.user-meta-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.user-display-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-white);
+  line-height: 1.2;
+}
+
+.user-email-role {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.btn-logout {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.78rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-logout:hover {
+  background: rgba(239, 68, 68, 0.25);
+  color: #ffffff;
+  border-color: var(--status-critical);
+}
+
+
+/* -------------------------------------------------------------------
+   2. LIQUID GLASS SIDEBAR
+------------------------------------------------------------------- */
+.glass-sidebar {
+  position: fixed;
+  top: var(--topbar-height);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border-right: var(--glass-border);
+  box-shadow: 4px 0 25px rgba(0, 0, 0, 0.45);
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 0.85rem 1rem 0.85rem;
+  transition: width var(--transition-smooth), transform var(--transition-smooth);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-nav-section-title {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  padding: 0.5rem 0.75rem 0.4rem;
+  font-weight: 700;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.nav-item:hover {
+  color: var(--text-white);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+  transform: translateX(3px);
+}
+
+.nav-item.active {
+  color: #ffffff;
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.32) 0%, rgba(6, 182, 212, 0.12) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: inset 0 0 15px rgba(6, 182, 212, 0.12);
+  font-weight: 600;
+}
+
+.nav-item.active .nav-icon {
+  color: var(--color-accent);
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.nav-item:hover .nav-icon {
+  color: var(--color-accent);
+}
+
+.nav-badge {
+  margin-left: auto;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-full);
+}
+
+/* Sidebar Footer Info Card */
+.sidebar-footer-card {
+  margin-top: auto;
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  background: rgba(2, 6, 23, 0.6);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.system-telemetry-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.telemetry-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.telemetry-time {
+  font-size: 0.7rem;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+}
+
+
+/* -------------------------------------------------------------------
+   3. LIQUID GLASS FOOTER
+------------------------------------------------------------------- */
+.glass-footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  min-height: var(--footer-height);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border-top: var(--glass-border);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+  z-index: 800;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-brand-title {
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-link {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-accent);
+}

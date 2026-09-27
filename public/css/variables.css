@@ -1,0 +1,89 @@
+/* ===================================================================
+   Z-SENTINEL AI — DESIGN SYSTEM VARIABLES
+   Enterprise Security & Privacy Guardian for IBM Z
+   Color Palette: Deep Navy, Midnight Black, Electric Blue, Cyber Cyan, Silver, White
+=================================================================== */
+
+:root {
+  /* Brand Core Colors */
+  --color-primary: #2563eb;
+  --color-primary-glow: #3b82f6;
+  --color-primary-dark: #1d4ed8;
+  --color-accent: #00f0ff;
+  --color-cyan: #06b6d4;
+  --color-cyan-glow: rgba(0, 240, 255, 0.35);
+
+  /* Deep Backgrounds */
+  --bg-space: #030712;
+  --bg-navy-darkest: #050b14;
+  --bg-navy-dark: #07101e;
+  --bg-navy-card: #0c182b;
+  --bg-navy-card-hover: #10213d;
+  --bg-surface-elevated: #11223e;
+
+  /* Enterprise Card Borders & Highlights */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(59, 130, 246, 0.18);
+  --border-cyan: rgba(6, 182, 212, 0.3);
+  --border-focus: #3b82f6;
+
+  /* Typography Colors */
+  --text-white: #ffffff;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-cyan: #38bdf8;
+
+  /* Status & Severity Accents */
+  --status-low: #10b981;
+  --status-low-bg: rgba(16, 185, 129, 0.12);
+  --status-low-border: rgba(16, 185, 129, 0.3);
+
+  --status-medium: #f59e0b;
+  --status-medium-bg: rgba(245, 158, 11, 0.12);
+  --status-medium-border: rgba(245, 158, 11, 0.3);
+
+  --status-high: #f97316;
+  --status-high-bg: rgba(249, 115, 22, 0.12);
+  --status-high-border: rgba(249, 115, 22, 0.3);
+
+  --status-critical: #ef4444;
+  --status-critical-bg: rgba(239, 68, 68, 0.14);
+  --status-critical-border: rgba(239, 68, 68, 0.4);
+
+  --status-ibmz: #818cf8;
+  --status-ibmz-bg: rgba(129, 140, 248, 0.12);
+
+  /* LIQUID GLASS SYSTEM (Applied exclusively to Topbar, Sidebar, Footer) */
+  --glass-bg: rgba(7, 16, 30, 0.72);
+  --glass-bg-hover: rgba(12, 24, 43, 0.85);
+  --glass-border: 1px solid rgba(56, 189, 248, 0.16);
+  --glass-backdrop: blur(18px) saturate(180%);
+  --glass-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.6), 0 0 24px -2px rgba(6, 182, 212, 0.08);
+  --glass-inner-glow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+
+  /* Dimensions */
+  --topbar-height: 72px;
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 78px;
+  --footer-height: 52px;
+
+  /* Typography */
+  --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, monospace;
+
+  /* Transitions & Shadows */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45);
+  --glow-cyan: 0 0 20px rgba(0, 240, 255, 0.25);
+  --glow-blue: 0 0 25px rgba(37, 99, 235, 0.35);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+}

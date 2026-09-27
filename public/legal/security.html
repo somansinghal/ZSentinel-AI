@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Architecture &amp; Policy — Z-SENTINEL AI</title>
+  <meta name="description" content="Security architecture, defense-in-depth principles, and vulnerability disclosures for Z-Sentinel AI.">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/glass.css">
+  <link rel="stylesheet" href="../css/legal.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-cyber-grid">
+
+  <header class="glass-topbar">
+    <a href="../index.html" class="topbar-brand">
+      <img src="../assets/z-sentinel-logo.png" alt="Z-Sentinel AI Logo" class="topbar-logo-img">
+      <div class="topbar-brand-title">
+        <span class="brand-name">Z-SENTINEL AI</span>
+        <span class="brand-tagline">AI Security &amp; Privacy Guardian</span>
+      </div>
+    </a>
+    <div class="topbar-actions">
+      <a href="../login.html" class="btn btn-primary btn-sm"><i data-lucide="shield-check"></i><span>Console Login</span></a>
+    </div>
+  </header>
+
+  <main class="legal-container">
+    <div class="legal-card">
+      <div class="legal-header">
+        <h1 class="legal-title">
+          <i data-lucide="shield-check" style="color: var(--color-accent); width: 32px; height: 32px;"></i>
+          Security Architecture &amp; Policy
+        </h1>
+        <div class="legal-meta">
+          <span>Last Updated: September 27, 2026</span>
+          <span>•</span>
+          <span>Version: 1.0 (Datathon Edition)</span>
+        </div>
+      </div>
+
+      <div class="legal-disclaimer-box">
+        <strong>Important Hackathon Notice:</strong> These documents are provided for this hackathon/demo project (IBM Z Datathon 2026) and should be reviewed by a qualified legal professional before being used as production legal terms. Z-Sentinel AI is an educational demonstration prototype and has not undergone formal commercial third-party security audits.
+      </div>
+
+      <div class="legal-content">
+        <h2>1. Defense-in-Depth Architecture</h2>
+        <p>
+          Z-Sentinel AI implements a layered, zero-trust security paradigm specifically designed to demonstrate resilient cyber defense for high-throughput mainframe streams:
+        </p>
+
+        <div style="background: rgba(2, 6, 23, 0.7); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; font-family: var(--font-mono); font-size: 0.8rem; color: #38bdf8; margin: 1rem 0; line-height: 1.8;">
+          Firebase Google Authentication<br>
+          &nbsp;&nbsp;↓<br>
+          Protected Frontend Routes (Client-Side Auth Guard)<br>
+          &nbsp;&nbsp;↓<br>
+          FastAPI Backend (CORS &amp; Strict Pydantic Schema Validation)<br>
+          &nbsp;&nbsp;↓<br>
+          Privacy Guardian Engine (Local Regex &amp; Deterministic Masking)<br>
+          &nbsp;&nbsp;↓<br>
+          Deterministic Heuristic Rule Engine (Explainable Deductions)<br>
+          &nbsp;&nbsp;↓<br>
+          Unsupervised Machine Learning (Isolation Forest Anomaly Scoring)<br>
+          &nbsp;&nbsp;↓<br>
+          Composite Risk Scoring (0–100 Classification: Low, Medium, High, Critical)<br>
+          &nbsp;&nbsp;↓<br>
+          Local Explanation Engine (Optional Backend-Only Groq AI Fallback)
+        </div>
+
+        <h2>2. Key Security Safeguards</h2>
+        <ul>
+          <li><strong>Zero Client-Side Secrets:</strong> Groq API keys, server tokens, and private credentials reside strictly in server-side environment variables (<code>.env</code>). No private keys are ever embedded in HTML, JavaScript, or public repositories.</li>
+          <li><strong>Isolated Judge Demo Environment:</strong> The Judge Demo mode operates inside a sandboxed state using exclusively deterministic synthetic records. It does not access real user accounts, private databases, or production credentials.</li>
+          <li><strong>Local Fallback Resilience:</strong> Unlike cloud-dependent AI tools, the core security engine does not crash if external AI APIs fail or time out. Deterministic algorithms ensure uninterrupted risk evaluation.</li>
+          <li><strong>Strict Data Minimization:</strong> Raw account numbers (PAN), government identifiers (SSN), emails, and phone numbers are redacted on-premise prior to database persistence or LLM explanation queries.</li>
+          <li><strong>Immutable Audit Logging:</strong> Security interventions (such as automated wire freezes, PII redactions, and analyst queries) are recorded in an audit trail with timestamps, severity levels, and provenance tags.</li>
+        </ul>
+
+        <h2>3. Responsible Vulnerability Disclosure</h2>
+        <p>
+          We welcome responsible reporting of vulnerabilities discovered in our codebase. If you identify a potential security issue, please notify the development team via our <a href="contact.html">Contact Page</a>. Please allow reasonable time for remediation prior to public disclosure.
+        </p>
+      </div>
+
+      <div class="legal-footer-nav">
+        <a href="../login.html" class="btn btn-outline btn-sm">← Back to Login</a>
+        <div style="display: flex; gap: 1rem; font-size: 0.8rem;">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="ai-disclaimer.html">AI Disclaimer</a>
+          <a href="data-processing.html">Data Processing</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="glass-footer" style="text-align: center; justify-content: center; font-size: 0.75rem; color: var(--text-muted);">
+    Z-Sentinel AI • IBM Z Datathon 2026 Demonstration Platform
+  </footer>
+
+  <script>if (window.lucide) window.lucide.createIcons();</script>
+</body>
+</html>

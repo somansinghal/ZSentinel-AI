@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Z-SENTINEL AI</title>
+  <meta name="description" content="Privacy Policy for Z-Sentinel AI, an IBM Z Datathon 2026 demonstration project.">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/glass.css">
+  <link rel="stylesheet" href="../css/legal.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-cyber-grid">
+
+  <!-- Topbar -->
+  <header class="glass-topbar">
+    <a href="../index.html" class="topbar-brand">
+      <img src="../assets/z-sentinel-logo.png" alt="Z-Sentinel AI Logo" class="topbar-logo-img">
+      <div class="topbar-brand-title">
+        <span class="brand-name">Z-SENTINEL AI</span>
+        <span class="brand-tagline">AI Security &amp; Privacy Guardian</span>
+      </div>
+    </a>
+    <div class="topbar-actions">
+      <a href="../login.html" class="btn btn-primary btn-sm">
+        <i data-lucide="shield-check"></i>
+        <span>Console Login</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="legal-container">
+    <div class="legal-card">
+      <div class="legal-header">
+        <h1 class="legal-title">
+          <i data-lucide="lock" style="color: var(--color-accent); width: 32px; height: 32px;"></i>
+          Privacy Policy
+        </h1>
+        <div class="legal-meta">
+          <span>Last Updated: September 27, 2026</span>
+          <span>•</span>
+          <span>Version: 1.0 (Datathon Edition)</span>
+        </div>
+      </div>
+
+      <div class="legal-disclaimer-box">
+        <strong>Important Hackathon Notice:</strong> These documents are provided for this hackathon/demo project (IBM Z Datathon 2026) and should be reviewed by a qualified legal professional before being used as production legal terms. Z-Sentinel AI is an educational demonstration prototype.
+      </div>
+
+      <div class="legal-content">
+        <h2>1. Scope &amp; Purpose</h2>
+        <p>
+          This Privacy Policy describes how Z-Sentinel AI ("we", "our", or "the Project") handles data in connection with the demonstration platform developed for the <strong>IBM Z Datathon 2026</strong>. This platform demonstrates autonomous threat detection and privacy protection for mainframe-class transactional environments.
+        </p>
+
+        <h2>2. Distinction: Real User Data vs. Synthetic Demo Data</h2>
+        <p>To preserve total transparency, we explicitly distinguish between two separate categories of data:</p>
+        <ul>
+          <li>
+            <strong>Real Authenticated User Data:</strong> When you authenticate via Google Sign-In (Firebase Authentication), we receive standard OAuth profile data consisting of your display name, email address, and profile photo URL. This data is utilized solely to render your session in the Security Console.
+          </li>
+          <li>
+            <strong>Synthetic Demo Data:</strong> All financial transactions (e.g., <code>TX-83921</code>, <code>TX-DEMO-001</code>), device identifiers (e.g., <code>DEV-99</code>), IP addresses, account numbers, and simulated IBM Z CICS/SMF streams are 100% synthetically generated. No real consumer records, credit card numbers, or banking databases are used or accessed.
+          </li>
+        </ul>
+
+        <h2>3. Information We Collect</h2>
+        <p>Within this demonstration platform, collection is strictly minimized to:</p>
+        <ul>
+          <li><strong>Authentication Information:</strong> Google user ID (UID), email address, and display name managed via Google Firebase Authentication.</li>
+          <li><strong>Session State:</strong> Local browser storage (<code>localStorage</code>) to maintain session continuity, dark mode preference, and Judge Demo toggles.</li>
+          <li><strong>Analyst Inputs:</strong> Text prompts submitted to the AI Security Copilot within the demo session.</li>
+        </ul>
+
+        <h2>4. Zero-Leakage Privacy Guardian Architecture</h2>
+        <p>
+          Z-Sentinel AI features a dedicated, local <strong>Privacy Guardian Engine</strong>. In accordance with privacy-by-design principles:
+        </p>
+        <ul>
+          <li>PII (including Primary Account Numbers, Social Security Numbers, emails, and phone numbers) is intercepted and masked locally before persistence or display.</li>
+          <li>Raw sensitive customer information is <strong>never</strong> transmitted to external Large Language Model APIs (such as Groq).</li>
+        </ul>
+
+        <h2>5. Third-Party Services</h2>
+        <p>The demonstration platform interfaces with the following third-party infrastructure:</p>
+        <ul>
+          <li><strong>Google Firebase:</strong> Identity management and authentication token validation.</li>
+          <li><strong>Groq AI:</strong> Optional, backend-only server-side natural language explanation provider. Groq is queried exclusively by the FastAPI backend using sanitized, redacted context.</li>
+          <li><strong>Vercel:</strong> Static frontend asset hosting and serverless function routing.</li>
+        </ul>
+
+        <h2>6. Data Retention &amp; Security</h2>
+        <p>
+          We do not store passwords, credit card numbers, or banking credentials. Demo sessions can be cleared at any time by clicking "Logout" or "Exit Demo Mode". Firebase authentication tokens expire automatically based on standard Google security policies.
+        </p>
+
+        <h2>7. Contact Information</h2>
+        <p>
+          Questions regarding this demonstration project may be directed to the project maintainers via the <a href="contact.html">Contact Page</a>.
+        </p>
+      </div>
+
+      <div class="legal-footer-nav">
+        <a href="../login.html" class="btn btn-outline btn-sm">← Back to Login</a>
+        <div style="display: flex; gap: 1rem; font-size: 0.8rem;">
+          <a href="terms-of-service.html">Terms of Service</a>
+          <a href="security.html">Security</a>
+          <a href="ai-disclaimer.html">AI Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="glass-footer" style="text-align: center; justify-content: center; font-size: 0.75rem; color: var(--text-muted);">
+    Z-Sentinel AI • IBM Z Datathon 2026 Demonstration Platform
+  </footer>
+
+  <script>if (window.lucide) window.lucide.createIcons();</script>
+</body>
+</html>

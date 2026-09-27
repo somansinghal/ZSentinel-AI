@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Threat Detection — Z-SENTINEL AI</title>
+  
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/glass.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+</head>
+<body class="app-shell bg-cyber-grid">
+
+  <div class="sidebar-backdrop"></div>
+
+  <!-- LIQUID GLASS TOPBAR -->
+  <header class="glass-topbar">
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <button type="button" class="topbar-btn" id="sidebar-toggle"><i data-lucide="menu"></i></button>
+      <a href="../dashboard.html" class="topbar-brand">
+        <img src="../assets/z-sentinel-logo.png" alt="Z-Sentinel AI Logo" class="topbar-logo-img">
+        <div class="topbar-brand-title">
+          <span class="brand-name">Z-SENTINEL AI</span>
+          <span class="brand-tagline">IBM Z Security Operations Console</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="topbar-center-status">
+      <div class="security-health-pill"><span class="pulse-dot pulse-dot-green"></span><span>DEFENSE STATUS: ACTIVE</span></div>
+      <div class="ibmz-stream-indicator"><i data-lucide="activity" style="width: 14px; height: 14px; color: #818cf8;"></i><span>IBM Z STREAM: SIMULATED</span></div>
+    </div>
+
+    <div class="topbar-actions">
+      <button type="button" class="topbar-btn" id="btn-notifications"><i data-lucide="bell"></i><span class="badge-counter">3</span></button>
+      <div class="user-profile-menu">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="User Profile" class="user-avatar-img" id="user-avatar">
+        <div class="user-meta-text">
+          <span class="user-display-name" id="user-name">Security Analyst</span>
+          <span class="user-email-role" id="user-email">analyst@ibmz.org</span>
+        </div>
+      </div>
+      <button type="button" class="btn-logout" id="btn-logout"><i data-lucide="log-out" style="width: 14px; height: 14px;"></i><span>Logout</span></button>
+    </div>
+  </header>
+
+  <!-- LIQUID GLASS SIDEBAR -->
+  <aside class="glass-sidebar" id="app-sidebar">
+    <div>
+      <div class="sidebar-nav-section-title">Operations Console</div>
+      <nav class="sidebar-nav">
+        <a href="../dashboard.html" class="nav-item">
+          <div class="nav-icon"><i data-lucide="layout-dashboard"></i></div>
+          <span class="nav-label">Dashboard</span>
+        </a>
+        <a href="transactions.html" class="nav-item">
+          <div class="nav-icon"><i data-lucide="arrow-left-right"></i></div>
+          <span class="nav-label">Transactions</span>
+          <span class="nav-badge badge-low">Live</span>
+        </a>
+        <a href="threats.html" class="nav-item active">
+          <div class="nav-icon"><i data-lucide="shield-alert"></i></div>
+          <span class="nav-label">Threat Detection</span>
+          <span class="nav-badge badge-critical">4</span>
+        </a>
+        <a href="privacy.html" class="nav-item">
+          <div class="nav-icon"><i data-lucide="lock"></i></div>
+          <span class="nav-label">Privacy Guardian</span>
+          <span class="nav-badge badge-medium">PII</span>
+        </a>
+        <a href="alerts.html" class="nav-item">
+          <div class="nav-icon"><i data-lucide="bell-ring"></i></div>
+          <span class="nav-label">Alerts</span>
+        </a>
+        <a href="copilot.html" class="nav-item">
+          <div class="nav-icon"><i data-lucide="bot"></i></div>
+          <span class="nav-label">AI Copilot</span>
+          <span class="nav-badge badge-ibmz">Groq</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-nav-section-title" style="margin-top: 1.5rem;">Infrastructure</div>
+      <nav class="sidebar-nav">
+        <a href="ibmz.html" class="nav-item">
+          <div class="nav-icon"><i data-lucide="server"></i></div>
+          <span class="nav-label">IBM Z Integration</span>
+        </a>
+        <a href="audit.html" class="nav-item">
+          <div class="nav-icon"><i data-lucide="file-clock"></i></div>
+          <span class="nav-label">Audit Logs</span>
+        </a>
+        <a href="settings.html" class="nav-item">
+          <div class="nav-icon"><i data-lucide="sliders"></i></div>
+          <span class="nav-label">Settings</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="sidebar-footer-card">
+      <div class="system-telemetry-status">
+        <span class="telemetry-label">MAIN CLOCK</span>
+        <span class="telemetry-time" id="utc-clock">--:--:-- UTC</span>
+      </div>
+      <div style="font-size: 0.68rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem;">
+        <span class="pulse-dot pulse-dot-green"></span>
+        <span>Local ML Model Loaded</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="main-content">
+    <div class="page-header">
+      <div class="page-title-wrap">
+        <h1 class="page-title">
+          <i data-lucide="shield-alert" style="color: #ef4444; width: 28px; height: 28px;"></i>
+          Threat Detection Center
+        </h1>
+        <div class="page-subtitle">Real-time anomaly identification, risk scoring, and automated containment</div>
+      </div>
+
+      <div class="page-actions">
+        <button type="button" class="btn btn-secondary btn-sm"><i data-lucide="filter"></i> Filter</button>
+        <button type="button" class="btn btn-primary btn-sm"><i data-lucide="download"></i> Export Threat Intel</button>
+      </div>
+    </div>
+
+    <!-- Threat Types Overview Banner -->
+    <div class="card" style="margin-bottom: 2rem;">
+      <div class="card-header">
+        <h2 class="card-title"><i data-lucide="cpu" style="width: 18px; height: 18px; color: var(--color-accent);"></i> Threat Intelligence Engine (Day 4 Module)</h2>
+        <span class="badge badge-ibmz">Scheduled: Day 4</span>
+      </div>
+      <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.25rem;">
+        Monitors 7 enterprise threat categories with combined Isolation Forest ML and deterministic policy heuristics.
+      </p>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Threat ID</th>
+              <th>Threat Type</th>
+              <th>Severity</th>
+              <th>Risk</th>
+              <th>Affected TX</th>
+              <th>Detection Reasons</th>
+              <th>Recommended Action</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mono" style="color: var(--text-white); font-weight: 700;">THR-1082</td>
+              <td><strong>Potential Account Takeover</strong></td>
+              <td><span class="badge badge-critical">CRITICAL</span></td>
+              <td><span class="mono" style="color: #ef4444; font-weight: 700;">92/100</span></td>
+              <td class="mono" style="color: var(--color-accent);">TX-83944</td>
+              <td>Multiple password failures + Unrecognized device + Geo-mismatch</td>
+              <td>Lock customer credentials &amp; trigger MFA verification</td>
+              <td><span class="badge badge-critical">NEW</span></td>
+            </tr>
+            <tr>
+              <td class="mono" style="color: var(--text-white); font-weight: 700;">THR-1081</td>
+              <td><strong>Transaction Burst</strong></td>
+              <td><span class="badge badge-high">HIGH</span></td>
+              <td><span class="mono" style="color: #f97316; font-weight: 700;">74/100</span></td>
+              <td class="mono" style="color: var(--color-accent);">TX-83939</td>
+              <td>12 outbound micro-transactions in under 30 seconds</td>
+              <td>Enforce velocity rate limit and hold pending batch</td>
+              <td><span class="badge badge-medium">INVESTIGATING</span></td>
+            </tr>
+            <tr>
+              <td class="mono" style="color: var(--text-white); font-weight: 700;">THR-1080</td>
+              <td><strong>Unusual Location</strong></td>
+              <td><span class="badge badge-high">HIGH</span></td>
+              <td><span class="mono" style="color: #f97316; font-weight: 700;">68/100</span></td>
+              <td class="mono" style="color: var(--color-accent);">TX-83925</td>
+              <td>Impossible travel vector across two continents in 20 minutes</td>
+              <td>Prompt for secondary out-of-band push notification</td>
+              <td><span class="badge badge-medium">INVESTIGATING</span></td>
+            </tr>
+            <tr>
+              <td class="mono" style="color: var(--text-white); font-weight: 700;">THR-1079</td>
+              <td><strong>Behavioral Anomaly</strong></td>
+              <td><span class="badge badge-medium">MEDIUM</span></td>
+              <td><span class="mono" style="color: #f59e0b; font-weight: 700;">48/100</span></td>
+              <td class="mono" style="color: var(--color-accent);">TX-83915</td>
+              <td>Amount 4.5x higher than 90-day moving average</td>
+              <td>Flag for post-settlement supervisor audit</td>
+              <td><span class="badge badge-low">RESOLVED</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="glass-footer">
+    <div class="footer-left"><span class="footer-brand-title">Z-SENTINEL AI</span><span>•</span><span>IBM Z Datathon 2026</span></div>
+    <div class="footer-right"><span>AI Provider: <strong style="color: var(--color-accent);">Local Security Engine</strong></span></div>
+  </footer>
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/auth-guard.js"></script>
+  <script src="../js/layout.js"></script>
+  <script src="../js/threats.js"></script>
+</body>
+</html>

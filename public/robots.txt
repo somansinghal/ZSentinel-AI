@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /login.html
+Allow: /google43d334ab82b2aeee.html
+Allow: /legal/
+
+# Disallow authenticated SOC console from public indexing
+Disallow: /dashboard.html
+Disallow: /pages/
+Disallow: /api/
+
+Sitemap: https://z-sentinel.vercel.app/sitemap.xml

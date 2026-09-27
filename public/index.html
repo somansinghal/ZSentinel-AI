@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Z-SENTINEL AI — AI Security &amp; Privacy Guardian for IBM Z</title>
+  <meta name="description" content="Enterprise AI Security &amp; Privacy Guardian for IBM Z. Detect threats, protect sensitive data, and decide safely with layered ML and deterministic security rules.">
+  
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="google43d334ab82b2aeee" />
+
+  <!-- SEO & Social Metadata -->
+  <link rel="canonical" href="https://z-sentinel.vercel.app/">
+  <meta name="keywords" content="IBM Z, Cybersecurity, Mainframe Security, AI Guardian, Privacy, Isolation Forest, Anomaly Detection, Datathon 2026">
+  <meta name="author" content="Z-Sentinel AI Contributors">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://z-sentinel.vercel.app/">
+  <meta property="og:title" content="Z-SENTINEL AI — AI Security &amp; Privacy Guardian for IBM Z">
+  <meta property="og:description" content="Detect threats. Protect data. Decide safely. Layered cyber defense for IBM Z mainframe transaction streams.">
+  <meta property="og:image" content="assets/z-sentinel-logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Z-SENTINEL AI — AI Security &amp; Privacy Guardian for IBM Z">
+  <meta name="twitter:description" content="Detect threats. Protect data. Decide safely. IBM Z Datathon 2026.">
+  <meta name="twitter:image" content="assets/z-sentinel-logo.png">
+
+  <!-- Favicon (User Uploaded Logo Exclusively) -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Z-Sentinel AI",
+    "applicationCategory": "SecurityApplication",
+    "operatingSystem": "IBM Z Mainframe, Linux, Cloud",
+    "description": "AI Security & Privacy Guardian for IBM Z mainframes featuring unsupervised machine learning, deterministic rule scoring, and zero-leakage PII redaction.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/glass.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Lucide Icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-cyber-grid">
+
+  <!-- Liquid Glass Landing Topbar -->
+  <header class="landing-nav">
+    <a href="index.html" class="topbar-brand">
+      <img src="assets/z-sentinel-logo.png" alt="Z-Sentinel AI Shield Logo" class="topbar-logo-img">
+      <div class="topbar-brand-title">
+        <span class="brand-name">Z-SENTINEL AI</span>
+        <span class="brand-tagline">AI Security &amp; Privacy Guardian for IBM Z</span>
+      </div>
+    </a>
+
+    <nav>
+      <ul class="landing-links">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#solution">Solution</a></li>
+        <li><a href="#intelligence">Security Intelligence</a></li>
+        <li><a href="#privacy">Privacy Guardian</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#features">Features</a></li>
+      </ul>
+    </nav>
+
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <a href="login.html" class="btn btn-primary" id="btn-nav-login">
+        <i data-lucide="shield-check"></i>
+        <span>Security Console</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section">
+      <div class="hero-glow-sphere"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot pulse-dot-blue"></span>
+          <span>IBM Z Datathon 2026 Official Submission</span>
+        </div>
+
+        <img src="assets/z-sentinel-logo.png" alt="Z-Sentinel AI Shield Logo" class="hero-logo-display">
+
+        <h1 class="hero-title">
+          <span class="gradient-text">Z-SENTINEL AI</span><br>
+          Next-Gen Mainframe Cyber Defense
+        </h1>
+
+        <div class="hero-tagline">
+          "Detect threats. Protect data. Decide safely."
+        </div>
+
+        <p class="hero-subtitle">
+          An autonomous, layered enterprise security operations guardian built specifically for high-throughput IBM Z mainframe transaction environments. Combining unsupervised machine learning, deterministic rule engines, zero-leakage PII privacy, and resilient explainable AI.
+        </p>
+
+        <div class="hero-actions">
+          <a href="login.html" class="btn btn-primary btn-lg" id="btn-hero-enter">
+            <i data-lucide="terminal"></i>
+            <span>ENTER SECURITY CONSOLE</span>
+          </a>
+          <a href="#architecture" class="btn btn-outline btn-lg" id="btn-hero-architecture">
+            <i data-lucide="layers"></i>
+            <span>EXPLORE ARCHITECTURE</span>
+          </a>
+        </div>
+
+        <!-- Live Telemetry Banner -->
+        <div class="telemetry-ribbon">
+          <div class="ribbon-stat">
+            <span class="ribbon-val cyan" id="telemetry-throughput">25,000+</span>
+            <span class="ribbon-label">IBM Z Events / Sec</span>
+          </div>
+          <div class="ribbon-stat">
+            <span class="ribbon-val green">0.42 ms</span>
+            <span class="ribbon-label">Mean Anomaly Latency</span>
+          </div>
+          <div class="ribbon-stat">
+            <span class="ribbon-val blue">100%</span>
+            <span class="ribbon-label">PII Redaction Rate</span>
+          </div>
+          <div class="ribbon-stat">
+            <span class="ribbon-val">Zero</span>
+            <span class="ribbon-label">External AI Single Point of Failure</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. Problem Section -->
+    <section id="problem" class="section">
+      <div class="section-header">
+        <span class="section-pill">The Challenge</span>
+        <h2 class="section-title">Mainframe Cyber Threats Demand Smarter Guardians</h2>
+        <p class="section-description">
+          IBM Z powers over 70% of global financial transactions. However, traditional legacy SIEMs and rigid signature systems struggle against modern distributed stealth attacks, credential stuffing, and unmasked data pipelines.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="comparison-card card-threat">
+          <div style="display: flex; align-items: center; gap: 0.75rem; color: #f87171;">
+            <i data-lucide="alert-octagon" style="width: 24px; height: 24px;"></i>
+            <h3 style="color: #f87171; font-size: 1.25rem;">Legacy Mainframe Security Gaps</h3>
+          </div>
+          <ul class="comparison-list">
+            <li>
+              <i data-lucide="x-circle" style="color: #ef4444; flex-shrink: 0; margin-top: 3px;"></i>
+              <div><strong>Rigid Static Thresholds:</strong> Fails to detect coordinated low-and-slow account takeovers and complex behavioral deviations.</div>
+            </li>
+            <li>
+              <i data-lucide="x-circle" style="color: #ef4444; flex-shrink: 0; margin-top: 3px;"></i>
+              <div><strong>Unprotected Data Exposure:</strong> PAN, SSN, and banking IDs frequently leak into audit streams, violating GDPR and PCI-DSS.</div>
+            </li>
+            <li>
+              <i data-lucide="x-circle" style="color: #ef4444; flex-shrink: 0; margin-top: 3px;"></i>
+              <div><strong>Fragile Cloud-AI Dependencies:</strong> Standard cloud AI APIs introduce latency, rate limits, and failure risks unsuitable for mission-critical core banking.</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="comparison-card card-sentinel">
+          <div style="display: flex; align-items: center; gap: 0.75rem; color: var(--color-accent);">
+            <i data-lucide="shield-check" style="width: 24px; height: 24px;"></i>
+            <h3 style="color: var(--color-accent); font-size: 1.25rem;">The Z-Sentinel AI Breakthrough</h3>
+          </div>
+          <ul class="comparison-list">
+            <li>
+              <i data-lucide="check-circle" style="color: var(--status-low); flex-shrink: 0; margin-top: 3px;"></i>
+              <div><strong>Multi-Vector ML Detection:</strong> Real-time Isolation Forest algorithms analyze velocity, deviation, and device entropy dynamically.</div>
+            </li>
+            <li>
+              <i data-lucide="check-circle" style="color: var(--status-low); flex-shrink: 0; margin-top: 3px;"></i>
+              <div><strong>Zero-Leakage Privacy Guardian:</strong> Deterministic masking engine redacts PII at the ingestion boundary before any storage or AI query.</div>
+            </li>
+            <li>
+              <i data-lucide="check-circle" style="color: var(--status-low); flex-shrink: 0; margin-top: 3px;"></i>
+              <div><strong>Resilient Local Core:</strong> Security decisions are 100% deterministic and locally calculated, with Groq AI serving as an optional natural language explainer.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Solution Section -->
+    <section id="solution" class="section">
+      <div class="section-header">
+        <span class="section-pill">The Solution</span>
+        <h2 class="section-title">Autonomous 360° Protection for IBM Z</h2>
+        <p class="section-description">
+          Z-Sentinel AI acts as a smart, impenetrable co-pilot for enterprise mainframe operations, unifying fraud detection, privacy preservation, and instant remediation.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="shield-alert"></i>
+          </div>
+          <h3 class="card-title">Real-Time Threat Detection</h3>
+          <p style="margin-top: 0.5rem; font-size: 0.88rem; color: var(--text-secondary);">
+            Catches transaction bursts, unexpected geographic jumps, credential stuffing, and behavioral anomalies within sub-millisecond windows.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="feature-icon-wrapper" style="color: #34d399; background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3);">
+            <i data-lucide="eye-off"></i>
+          </div>
+          <h3 class="card-title">Privacy Guardian</h3>
+          <p style="margin-top: 0.5rem; font-size: 0.88rem; color: var(--text-secondary);">
+            Automated detection and high-speed masking for credit card numbers, government identifiers, email addresses, and phone numbers before analysis.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="feature-icon-wrapper" style="color: #a78bfa; background: rgba(129, 140, 248, 0.15); border-color: rgba(129, 140, 248, 0.3);">
+            <i data-lucide="cpu"></i>
+          </div>
+          <h3 class="card-title">Explainable AI Copilot</h3>
+          <p style="margin-top: 0.5rem; font-size: 0.88rem; color: var(--text-secondary);">
+            Every risk score is backed by clear, human-readable deduction points, supplemented by optional Groq AI conversational reasoning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Security Intelligence Section -->
+    <section id="intelligence" class="section">
+      <div class="section-header">
+        <span class="section-pill">Intelligence Core</span>
+        <h2 class="section-title">Multi-Layered Risk Scoring Engine</h2>
+        <p class="section-description">
+          Unlike black-box models, Z-Sentinel AI pairs unsupervised Machine Learning (Isolation Forest) with audited heuristics to produce transparent risk scores from 0 to 100.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="metric-card card-green">
+          <div class="metric-header">
+            <span class="metric-label">Low Risk</span>
+            <span class="badge badge-low">0 – 24</span>
+          </div>
+          <div class="metric-value" style="color: var(--status-low);">Normal</div>
+          <p style="font-size: 0.75rem; color: var(--text-secondary);">Known devices, verified geographic origin, regular velocity baseline.</p>
+        </div>
+
+        <div class="metric-card card-amber">
+          <div class="metric-header">
+            <span class="metric-label">Medium Risk</span>
+            <span class="badge badge-medium">25 – 49</span>
+          </div>
+          <div class="metric-value" style="color: var(--status-medium);">Elevated</div>
+          <p style="font-size: 0.75rem; color: var(--text-secondary);">Unusual transaction hour or slight amount deviations.</p>
+        </div>
+
+        <div class="metric-card card-red">
+          <div class="metric-header">
+            <span class="metric-label">High Risk</span>
+            <span class="badge badge-high">50 – 74</span>
+          </div>
+          <div class="metric-value" style="color: var(--status-high);">Flagged</div>
+          <p style="font-size: 0.75rem; color: var(--text-secondary);">Unknown device with high amount anomaly and velocity spike.</p>
+        </div>
+
+        <div class="metric-card card-red" style="border-color: rgba(239, 68, 68, 0.5);">
+          <div class="metric-header">
+            <span class="metric-label">Critical</span>
+            <span class="badge badge-critical">75 – 100</span>
+          </div>
+          <div class="metric-value" style="color: var(--status-critical);">Blocked</div>
+          <p style="font-size: 0.75rem; color: var(--text-secondary);">Coordinated burst attack, multiple failed logins, anomalous IP.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Privacy Guardian Section -->
+    <section id="privacy" class="section">
+      <div class="section-header">
+        <span class="section-pill">Zero Data Leakage</span>
+        <h2 class="section-title">Automated PII Sanitization &amp; Masking</h2>
+        <p class="section-description">
+          Z-Sentinel AI strictly prevents raw sensitive customer data from being exposed in monitoring consoles or dispatched across external networks.
+        </p>
+      </div>
+
+      <div class="card" style="padding: 2.5rem;">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>PII Type</th>
+                <th>Raw Input Sample</th>
+                <th>Security Action</th>
+                <th>Masked Safe Output</th>
+                <th>Compliance Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Primary Account (PAN)</strong></td>
+                <td class="mono">4532 8901 2345 9012</td>
+                <td><span class="badge badge-critical">Redacted</span></td>
+                <td class="mono" style="color: var(--color-accent);">************9012</td>
+                <td><span class="badge badge-low">PCI-DSS COMPLIANT</span></td>
+              </tr>
+              <tr>
+                <td><strong>Government ID / SSN</strong></td>
+                <td class="mono">987-65-4321</td>
+                <td><span class="badge badge-critical">Redacted</span></td>
+                <td class="mono" style="color: var(--color-accent);">*****4321</td>
+                <td><span class="badge badge-low">SECURE</span></td>
+              </tr>
+              <tr>
+                <td><strong>Customer Phone</strong></td>
+                <td class="mono">+1 (555) 019-2834</td>
+                <td><span class="badge badge-medium">Masked</span></td>
+                <td class="mono" style="color: var(--color-accent);">+1 (555) ***-2834</td>
+                <td><span class="badge badge-low">GDPR ART. 32</span></td>
+              </tr>
+              <tr>
+                <td><strong>Email Address</strong></td>
+                <td class="mono">johndoe@enterprise.com</td>
+                <td><span class="badge badge-medium">Obfuscated</span></td>
+                <td class="mono" style="color: var(--color-accent);">j***e@enterprise.com</td>
+                <td><span class="badge badge-low">PROTECTED</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Interactive Architecture Section -->
+    <section id="architecture" class="section">
+      <div class="section-header">
+        <span class="section-pill">System Blueprint</span>
+        <h2 class="section-title">Layered Cyber Architecture</h2>
+        <p class="section-description">
+          Engineered with resilient local computing at its core. Zero single points of failure.
+        </p>
+      </div>
+
+      <div class="architecture-flow">
+        <div class="flow-steps">
+          <div class="flow-step-box">
+            <div class="flow-step-number">Step 01</div>
+            <div class="flow-step-title">IBM Z Event Stream</div>
+            <div class="flow-step-desc">High-throughput mainframe transactions and CICS telemetry stream.</div>
+          </div>
+          <div class="flow-connector"></div>
+
+          <div class="flow-step-box">
+            <div class="flow-step-number">Step 02</div>
+            <div class="flow-step-title">Integration Adapter</div>
+            <div class="flow-step-desc">Normalizes enterprise payloads into clean event schemas.</div>
+          </div>
+          <div class="flow-connector"></div>
+
+          <div class="flow-step-box">
+            <div class="flow-step-number">Step 03</div>
+            <div class="flow-step-title">Privacy Guardian</div>
+            <div class="flow-step-desc">Deterministic zero-leakage masking of PAN, SSN, and PII.</div>
+          </div>
+          <div class="flow-connector"></div>
+
+          <div class="flow-step-box">
+            <div class="flow-step-number">Step 04</div>
+            <div class="flow-step-title">ML + Rule Engine</div>
+            <div class="flow-step-desc">Isolation Forest + rule-based scoring (0–100) with local reasons.</div>
+          </div>
+          <div class="flow-connector"></div>
+
+          <div class="flow-step-box">
+            <div class="flow-step-number">Step 05</div>
+            <div class="flow-step-title">SOC Console / Copilot</div>
+            <div class="flow-step-desc">Real-time alerts, action dispatch, and optional Groq explainer.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Features Grid -->
+    <section id="features" class="section">
+      <div class="section-header">
+        <span class="section-pill">Enterprise Capabilities</span>
+        <h2 class="section-title">Built for Mission-Critical Reliability</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="feature-box">
+          <div class="feature-icon-wrapper"><i data-lucide="zap"></i></div>
+          <div class="feature-title">Attack Simulator</div>
+          <div class="feature-desc">Generate synthetic normal and burst transactions, credential attacks, and geo-spoofing in controlled demo mode.</div>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrapper"><i data-lucide="lock"></i></div>
+          <div class="feature-title">Firebase Auth &amp; Google Sign-In</div>
+          <div class="feature-desc">Enterprise identity management securing the operations console with verified Google single sign-on.</div>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrapper"><i data-lucide="cpu"></i></div>
+          <div class="feature-title">IBM Z Adapter Layer</div>
+          <div class="feature-desc">Pluggable abstraction layer ready to interface directly with IBM Z, Xplore, or synthetic enterprise streams.</div>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrapper"><i data-lucide="sparkles"></i></div>
+          <div class="feature-title">Resilient AI Explainer</div>
+          <div class="feature-desc">Deterministic local explanation engine with graceful fallback if Groq cloud AI API is unavailable.</div>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrapper"><i data-lucide="file-text"></i></div>
+          <div class="feature-title">Immutable Audit Trail</div>
+          <div class="feature-desc">Every security evaluation, blocked transaction, and analyst action logged for regulatory compliance.</div>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-wrapper"><i data-lucide="layout"></i></div>
+          <div class="feature-title">Liquid Glass SOC Interface</div>
+          <div class="feature-desc">Sleek dark-mode operations console with translucent glass topbar and sidebar engineered for readability.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Call To Action -->
+    <section class="section" style="padding-bottom: 4rem;">
+      <div class="cta-banner">
+        <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Experience Z-Sentinel AI in Action</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem;">
+          Built for the IBM Z Datathon 2026. Log in via Google Authentication to access the Security Operations Console.
+        </p>
+        <a href="login.html" class="btn btn-primary btn-lg" id="btn-cta-launch">
+          <i data-lucide="shield-check"></i>
+          <span>Launch Security Console</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Liquid Glass Landing Footer -->
+  <footer class="glass-footer" style="flex-direction: column; gap: 0.85rem; padding: 1.5rem 2rem; text-align: center;">
+    <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <div class="footer-left">
+        <span class="footer-brand-title">Z-SENTINEL AI</span>
+        <span>•</span>
+        <span>IBM Z Datathon 2026</span>
+        <span>•</span>
+        <span style="color: var(--status-low);"><span class="pulse-dot pulse-dot-green"></span> System Operational</span>
+      </div>
+      <div class="footer-right">
+        <a href="login.html" class="footer-link">Login &amp; Demo</a>
+        <a href="#architecture" class="footer-link">Architecture</a>
+        <a href="https://github.com" target="_blank" rel="noopener" class="footer-link">GitHub Repository</a>
+      </div>
+    </div>
+
+    <!-- Legal Navigation Links -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1rem; font-size: 0.76rem; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.75rem; width: 100%;">
+      <a href="legal/privacy-policy.html" class="footer-link">Privacy Policy</a>
+      <span>•</span>
+      <a href="legal/terms-of-service.html" class="footer-link">Terms of Service</a>
+      <span>•</span>
+      <a href="legal/cookie-policy.html" class="footer-link">Cookie Policy</a>
+      <span>•</span>
+      <a href="legal/acceptable-use.html" class="footer-link">Acceptable Use</a>
+      <span>•</span>
+      <a href="legal/security.html" class="footer-link">Security Architecture</a>
+      <span>•</span>
+      <a href="legal/ai-disclaimer.html" class="footer-link">AI Disclaimer</a>
+      <span>•</span>
+      <a href="legal/accessibility.html" class="footer-link">Accessibility</a>
+      <span>•</span>
+      <a href="legal/contact.html" class="footer-link">Contact</a>
+    </div>
+
+    <div style="font-size: 0.68rem; color: var(--text-muted);">
+      Z-Sentinel AI is a hackathon demonstration. Do not use demo outputs as a substitute for professional security decisions.
+    </div>
+  </footer>
+
+  <script>
+    if (window.lucide) {
+      window.lucide.createIcons();
+    }
+  </script>
+</body>
+</html>

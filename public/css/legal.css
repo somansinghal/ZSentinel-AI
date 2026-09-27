@@ -1,0 +1,123 @@
+/* ===================================================================
+   Z-SENTINEL AI — LEGAL & COMPLIANCE PAGES STYLES
+   Readable, high-contrast typography adhering to enterprise cyber theme
+=================================================================== */
+
+.legal-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 110px 1.5rem 60px;
+  min-height: calc(100vh - 120px);
+}
+
+.legal-card {
+  background: var(--bg-navy-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+  line-height: 1.7;
+}
+
+.legal-header {
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.legal-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-white);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.legal-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.legal-disclaimer-box {
+  background: rgba(245, 158, 11, 0.08);
+  border-left: 4px solid #f59e0b;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+  color: #fef3c7;
+}
+
+.legal-content h2 {
+  font-size: 1.35rem;
+  color: #ffffff;
+  margin: 2rem 0 0.85rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.legal-content h3 {
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  margin: 1.5rem 0 0.5rem;
+}
+
+.legal-content p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin-bottom: 1rem;
+}
+
+.legal-content ul, .legal-content ol {
+  margin: 0 0 1.25rem 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+.legal-content li {
+  margin-bottom: 0.5rem;
+}
+
+.legal-content strong {
+  color: var(--text-white);
+}
+
+.legal-content code {
+  background: #030712;
+  border: 1px solid var(--border-subtle);
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+  color: #38bdf8;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.legal-footer-nav {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .legal-container {
+    padding-top: 90px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .legal-card {
+    padding: 2rem 1.25rem;
+  }
+  .legal-title {
+    font-size: 1.7rem;
+  }
+}

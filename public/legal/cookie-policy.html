@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie &amp; Storage Policy — Z-SENTINEL AI</title>
+  <meta name="description" content="Cookie and Local Storage Policy for Z-Sentinel AI demonstration platform.">
+  <link rel="icon" type="image/x-icon" href="../favicon.ico">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../favicon.png">
+
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/glass.css">
+  <link rel="stylesheet" href="../css/legal.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-cyber-grid">
+
+  <header class="glass-topbar">
+    <a href="../index.html" class="topbar-brand">
+      <img src="../assets/z-sentinel-logo.png" alt="Z-Sentinel AI Logo" class="topbar-logo-img">
+      <div class="topbar-brand-title">
+        <span class="brand-name">Z-SENTINEL AI</span>
+        <span class="brand-tagline">AI Security &amp; Privacy Guardian</span>
+      </div>
+    </a>
+    <div class="topbar-actions">
+      <a href="../login.html" class="btn btn-primary btn-sm"><i data-lucide="shield-check"></i><span>Console Login</span></a>
+    </div>
+  </header>
+
+  <main class="legal-container">
+    <div class="legal-card">
+      <div class="legal-header">
+        <h1 class="legal-title">
+          <i data-lucide="database" style="color: var(--color-accent); width: 32px; height: 32px;"></i>
+          Cookie &amp; Local Storage Policy
+        </h1>
+        <div class="legal-meta">
+          <span>Last Updated: September 27, 2026</span>
+          <span>•</span>
+          <span>Version: 1.0 (Datathon Edition)</span>
+        </div>
+      </div>
+
+      <div class="legal-disclaimer-box">
+        <strong>Important Hackathon Notice:</strong> These documents are provided for this hackathon/demo project (IBM Z Datathon 2026) and should be reviewed by a qualified legal professional before being used as production legal terms. Z-Sentinel AI is an educational demonstration prototype.
+      </div>
+
+      <div class="legal-content">
+        <h2>1. Overview</h2>
+        <p>
+          Z-Sentinel AI respects your privacy and is committed to minimal data persistence. We do <strong>not</strong> employ invasive tracking cookies, third-party marketing beacons, or cross-site fingerprinting scripts.
+        </p>
+
+        <h2>2. Technologies We Actually Use</h2>
+        <p>Our platform uses only strictly necessary browser storage mechanisms to provide essential functions:</p>
+        <ul>
+          <li>
+            <strong>Firebase Authentication Tokens (IndexedDB / Session Storage):</strong> Managed directly by the Google Firebase Web SDK to persist your authenticated login state securely across page reloads.
+          </li>
+          <li>
+            <strong>HTML5 Local Storage (<code>localStorage</code>):</strong>
+            <ul>
+              <li><code>zsentinel_judge_demo_mode</code>: Stores a boolean flag indicating if Judge Demo Mode is active.</li>
+              <li><code>zsentinel_demo_user</code>: Stores the synthetic profile used in demo evaluations.</li>
+              <li><code>zsentinel_firebase_config</code>: Stores optional custom client-side Firebase web configuration if you explicitly enter it via the settings dialog.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>3. Third-Party Analytics</h2>
+        <p>
+          This demonstration platform does not utilize third-party advertising or commercial analytics trackers (such as Google Analytics or Facebook Pixel). CDN assets (such as Lucide Icons and Chart.js) are loaded to deliver icons and client-side graphs without setting persistent tracking cookies.
+        </p>
+
+        <h2>4. Managing and Clearing Storage</h2>
+        <p>
+          You can remove all stored session preferences at any time by clearing your browser's site data, clicking "Logout" in the navigation topbar, or clicking "Exit Demo Mode".
+        </p>
+      </div>
+
+      <div class="legal-footer-nav">
+        <a href="../login.html" class="btn btn-outline btn-sm">← Back to Login</a>
+        <div style="display: flex; gap: 1rem; font-size: 0.8rem;">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
+          <a href="security.html">Security</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="glass-footer" style="text-align: center; justify-content: center; font-size: 0.75rem; color: var(--text-muted);">
+    Z-Sentinel AI • IBM Z Datathon 2026 Demonstration Platform
+  </footer>
+
+  <script>if (window.lucide) window.lucide.createIcons();</script>
+</body>
+</html>

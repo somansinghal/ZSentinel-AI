@@ -1,0 +1,26 @@
+{
+  "name": "Z-Sentinel AI",
+  "short_name": "Z-Sentinel",
+  "description": "AI Security & Privacy Guardian for IBM Z Mainframe Transaction Systems",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#050b14",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/z-sentinel-logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}
