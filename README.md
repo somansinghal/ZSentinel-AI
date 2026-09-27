@@ -2,6 +2,10 @@
 ### AI Security & Privacy Guardian for IBM Z
 **Tagline:** *"Detect threats. Protect data. Decide safely."*  
 **Event:** IBM Z Datathon 2026  
+**Created by:** Soman Singhal  
+**GitHub:** [https://github.com/somansinghal/ZSentinel-AI](https://github.com/somansinghal/ZSentinel-AI)  
+**Live Demo:** [https://z-sentinel-ai.vercel.app/](https://z-sentinel-ai.vercel.app/)  
+**Contact:** [somansinghal06@gmail.com](mailto:somansinghal06@gmail.com)  
 
 ---
 
@@ -196,8 +200,8 @@ Detailed guide: [docs/local-development.md](file:///Users/somansinghal/Downloads
 
 ### 1. Clone & Set Up
 ```bash
-git clone https://github.com/somansinghal/Z-Sentinel-AI.git
-cd Z-Sentinel-AI
+git clone https://github.com/somansinghal/ZSentinel-AI.git
+cd ZSentinel-AI
 ```
 
 ### 2. Run Static Frontend
@@ -390,6 +394,27 @@ Z-Sentinel AI includes a complete 10-page legal and compliance suite in [`public
 
 ---
 
+## Author
+
+**Soman Singhal**  
+- **Role:** Project Creator & Architect (IBM Z Datathon 2026)  
+- **GitHub:** [https://github.com/somansinghal](https://github.com/somansinghal)  
+- **Repository:** [https://github.com/somansinghal/ZSentinel-AI](https://github.com/somansinghal/ZSentinel-AI)  
+- **Email:** [somansinghal06@gmail.com](mailto:somansinghal06@gmail.com)  
+
+---
+
+## Contact
+
+For inquiries regarding Z-Sentinel AI, architecture reviews, demonstrations, or responsible vulnerability reporting:
+- **Email:** [somansinghal06@gmail.com](mailto:somansinghal06@gmail.com)
+- **GitHub Repository:** [https://github.com/somansinghal/ZSentinel-AI](https://github.com/somansinghal/ZSentinel-AI)
+- **Live Deployment:** [https://z-sentinel-ai.vercel.app/](https://z-sentinel-ai.vercel.app/)
+- **Contact Page:** [public/legal/contact.html](file:///Users/somansinghal/Downloads/ZSentinel%20AI/public/legal/contact.html)
+
+---
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](file:///Users/somansinghal/Downloads/ZSentinel%20AI/LICENSE) file for details. Third-party dependencies remain subject to their respective licenses.
+

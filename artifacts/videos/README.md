@@ -27,5 +27,5 @@ npm run record:video
 ```
 Or pointing to a deployed production instance:
 ```bash
-BASE_URL=https://z-sentinel.vercel.app npm run record:video
+BASE_URL=https://z-sentinel-ai.vercel.app npm run record:video
 ```

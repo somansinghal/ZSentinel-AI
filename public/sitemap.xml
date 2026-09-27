@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://z-sentinel.vercel.app/</loc>
+    <loc>https://z-sentinel-ai.vercel.app/</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://z-sentinel.vercel.app/login.html</loc>
+    <loc>https://z-sentinel-ai.vercel.app/login.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://z-sentinel.vercel.app/legal/privacy-policy.html</loc>
+    <loc>https://z-sentinel-ai.vercel.app/legal/privacy-policy.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://z-sentinel.vercel.app/legal/terms-of-service.html</loc>
+    <loc>https://z-sentinel-ai.vercel.app/legal/terms-of-service.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://z-sentinel.vercel.app/legal/cookie-policy.html</loc>
+    <loc>https://z-sentinel-ai.vercel.app/legal/cookie-policy.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://z-sentinel.vercel.app/legal/acceptable-use.html</loc>
+    <loc>https://z-sentinel-ai.vercel.app/legal/acceptable-use.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://z-sentinel.vercel.app/legal/security.html</loc>
+    <loc>https://z-sentinel-ai.vercel.app/legal/security.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://z-sentinel.vercel.app/legal/ai-disclaimer.html</loc>
+    <loc>https://z-sentinel-ai.vercel.app/legal/ai-disclaimer.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://z-sentinel.vercel.app/legal/data-processing.html</loc>
+    <loc>https://z-sentinel-ai.vercel.app/legal/data-processing.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://z-sentinel.vercel.app/legal/third-party-services.html</loc>
+    <loc>https://z-sentinel-ai.vercel.app/legal/third-party-services.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://z-sentinel.vercel.app/legal/accessibility.html</loc>
+    <loc>https://z-sentinel-ai.vercel.app/legal/accessibility.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://z-sentinel.vercel.app/legal/contact.html</loc>
+    <loc>https://z-sentinel-ai.vercel.app/legal/contact.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>

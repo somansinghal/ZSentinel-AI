@@ -42,10 +42,12 @@ app.include_router(ibmz_router, prefix="/api")
 
 # System Health Check
 @app.get("/api/health")
+@app.head("/api/health")
 async def health_check():
     """System health check endpoint."""
     return {
-        "status": "HEALTHY",
+        "status": "ok",
+        "service": "Z-Sentinel AI",
         "system": "Z-Sentinel AI",
         "event_adapter": "IBM Z Mainframe (Simulated)",
         "security_engine": "Deterministic Rules + ML Active",

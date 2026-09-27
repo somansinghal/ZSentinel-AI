@@ -29,5 +29,5 @@ npm run screenshots
 ```
 Or pointing to a deployed production instance:
 ```bash
-BASE_URL=https://z-sentinel.vercel.app npm run screenshots
+BASE_URL=https://z-sentinel-ai.vercel.app npm run screenshots
 ```

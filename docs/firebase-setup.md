@@ -31,7 +31,7 @@ Z-Sentinel AI uses **Google Firebase Authentication (Free Spark Tier)** to provi
    - Ensure the following are listed:
      - `localhost`
      - `127.0.0.1`
-     - Your Vercel production domain (e.g. `z-sentinel.vercel.app` or `your-project.vercel.app`).
+     - Your Vercel production domain (e.g. `z-sentinel-ai.vercel.app` or `your-project.vercel.app`).
 
 4. **Register Web App & Obtain Config:**
    - Click the gear icon next to **Project Overview** > **Project settings**.
