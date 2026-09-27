@@ -33,16 +33,24 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Register API Routers
+# Register API Routers (both with /api prefix and root prefix to handle Vercel path stripping)
 app.include_router(transactions_router, prefix="/api")
 app.include_router(threats_router, prefix="/api")
 app.include_router(privacy_router, prefix="/api")
 app.include_router(copilot_router, prefix="/api")
 app.include_router(ibmz_router, prefix="/api")
 
-# System Health Check
+app.include_router(transactions_router)
+app.include_router(threats_router)
+app.include_router(privacy_router)
+app.include_router(copilot_router)
+app.include_router(ibmz_router)
+
+# System Health Check (handles both /api/health and /health)
 @app.get("/api/health")
 @app.head("/api/health")
+@app.get("/health")
+@app.head("/health")
 async def health_check():
     """System health check endpoint."""
     return {
